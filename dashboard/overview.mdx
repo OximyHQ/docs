@@ -1,0 +1,255 @@
+---
+title: "Dashboard Overview"
+description: "Navigate the Oximy control plane"
+---
+
+The Oximy dashboard is your central hub for monitoring AI tool usage across your organization. This guide covers navigation and key features.
+
+## Navigation
+
+The sidebar provides access to all main features:
+
+| Page | Description |
+|------|-------------|
+| **Home** | Real-time activity feed and discovery journal |
+| **Inventory** | All detected AI tools, organized by category |
+| **Devices** | Manage enrolled devices |
+| **Ask** | Query your data with natural language |
+| **Settings** | Workspace configuration |
+
+### Quick actions
+
+- **+ Add Device** — Enroll a new device
+- **Search** (Cmd+K) — Open command palette for quick navigation
+- **Help & Support** — Access documentation and contact support
+
+---
+
+## Home
+
+The Home page shows real-time AI activity and recent discoveries.
+
+### Activity Feed
+
+The left column displays a live feed of AI tool usage:
+
+<img 
+  src="/images/activity-feed.png" 
+  alt="Oximy dashboard activity feed screenshot" 
+  style={{ border: "1px solid #eee", borderRadius: "8px", width: "100%", maxWidth: "820px", margin: "24px 0" }} 
+/>
+
+
+
+Each activity card shows:
+- Tool name and icon
+- Relative timestamp
+- Device name
+- User email
+
+**Click any activity** to open a detail drawer with more information based on the coverage level:
+- **Chat** — Full conversation view
+- **Full Trace** — Complete request/response data
+- **Features** — Extracted metadata (model, tokens, etc.)
+- **Metadata** — Basic event information only
+
+### Discovery Journal
+
+The right column shows milestones and landscape overview:
+
+- **Recent Discoveries** — First-time detections of new tools, devices, or people
+- **Tool Landscape** — Most-used AI tools with activity counts
+- **Device Landscape** — Enrolled devices with online/offline status
+- **Workspace Stats** — Total activities, devices, tools, and team members
+
+<Tip>
+  When you detect your first AI activity, a "Signal Acquired!" celebration appears. This only shows once.
+</Tip>
+
+---
+
+## Inventory
+
+View all detected AI tools across your organization.
+
+### Categories
+
+Tools are organized into three categories:
+
+| Category | Description | Examples |
+|----------|-------------|----------|
+| **Apps** | Desktop applications | Cursor, GitHub Copilot |
+| **Websites** | Browser-based AI tools | ChatGPT, Claude.ai |
+| **Direct APIs** | Direct API integrations | OpenAI API, Anthropic API |
+
+### Tool Cards
+
+Each tool card displays:
+- Tool icon and name
+- Provider
+- Activity count
+- 7-day activity sparkline
+- Coverage level badge
+- Last seen timestamp
+
+### Search
+
+Use the search bar to filter tools by name, domain, or provider. Results update in real-time as you type.
+
+### Missing a tool?
+
+Click **Missing an app?** to request support for AI tools not currently detected.
+
+---
+
+## Devices
+
+Manage all enrolled devices from the Devices page.
+
+### Device Table
+
+| Column | Description |
+|--------|-------------|
+| Device name | User-assigned name |
+| Owner | Email of device owner |
+| OS | Operating system icon |
+| Status | Online (green) or Offline (gray) |
+| Last seen | Relative timestamp |
+| Version | Sensor version number |
+
+Click any device row to view detailed information, activity history, and analytics.
+
+### Table Navigation
+
+| Key | Action |
+|-----|--------|
+| `j` / `↓` | Move to next device |
+| `k` / `↑` | Move to previous device |
+| `Enter` | Open device details |
+| `Esc` | Deselect current device |
+
+---
+
+## Ask
+
+Query your AI usage data using natural language.
+
+### Example Questions
+
+- "Who uses ChatGPT the most?"
+- "What new tools were discovered this week?"
+- "Show me activity by tool"
+- "What percentage of activity has full trace?"
+
+### Response Types
+
+Ask returns interactive visualizations:
+
+| Card Type | Description |
+|-----------|-------------|
+| **List** | Ranked list with counts |
+| **Stat** | Single metric display |
+| **Bar Chart** | Horizontal bar visualization |
+| **Donut** | Percentage breakdown |
+| **New Tools** | Recently discovered tools |
+
+Cards persist on the page and can be dismissed with the X button.
+
+---
+
+## Settings
+
+Configure your workspace.
+
+### Timezone
+
+Set the timezone for your workspace. This affects how dates and times are displayed throughout the dashboard.
+
+Available regions:
+- **Americas** — ET, CT, MT, PT (New York, Chicago, Denver, LA)
+- **Europe** — GMT, CET (London, Paris, Berlin)
+- **Asia/Pacific** — Singapore, Hong Kong, Tokyo, Sydney
+- **UTC** — For global teams
+
+After selecting a timezone, click **Save changes**. A confirmation message appears: "Settings saved".
+
+---
+
+## Keyboard Shortcuts
+
+Navigate quickly with keyboard shortcuts.
+
+### Global Navigation
+
+| Shortcut | Action |
+|----------|--------|
+| `g h` | Go to Home |
+| `g i` | Go to Inventory |
+| `g d` | Go to Devices |
+| `g a` | Go to Ask |
+| `g ?` | Go to Help |
+
+### Quick Actions
+
+| Shortcut | Action |
+|----------|--------|
+| `Cmd+K` / `Ctrl+K` | Open command palette |
+| `/` | Open command palette |
+| `n` | Add new device |
+| `?` | Show all keyboard shortcuts |
+| `Esc` | Close modal/drawer |
+
+### Interface
+
+| Shortcut | Action |
+|----------|--------|
+| `Cmd+[` | Toggle sidebar |
+| `t` | Toggle light/dark theme |
+
+Press `?` anywhere to view all available shortcuts.
+
+---
+
+## Command Palette
+
+Press `Cmd+K` (Mac) or `Ctrl+K` (Windows) to open the command palette for quick search and navigation.
+
+### Default View
+
+When opened with no query, shows:
+- **Recent** — Recent prompts and activities
+- **Actions** — Add device, toggle theme, view coverage gaps
+- **Go to** — Quick navigation to pages
+
+### Search Mode
+
+Start typing to search across:
+- Activities (by content, tool name)
+- Tools (by name, domain)
+- Devices (by name, owner email)
+
+Use arrow keys to navigate results, Enter to select.
+
+---
+
+## Theme
+
+Toggle between light and dark mode:
+- Press `t` key
+- Use the theme toggle in your profile dropdown
+- Search "Switch to dark/light mode" in command palette
+
+Your preference is saved and persists across sessions.
+
+---
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Using Ask" icon="message-question" href="/dashboard/ask">
+    Deep dive into natural language analytics.
+  </Card>
+  <Card title="Troubleshooting" icon="wrench" href="/troubleshooting">
+    Solutions for common issues.
+  </Card>
+</CardGroup>

@@ -1,0 +1,169 @@
+---
+title: "Ask"
+description: "Query your AI usage data with natural language"
+---
+
+Ask is Oximy's natural language analytics feature. Type questions about your AI usage data and get visual answers.
+
+## Getting Started
+
+Navigate to the **Ask** page from the sidebar, or press `g a`.
+
+Type a question in the input field and press Enter. Oximy analyzes your data and returns an interactive visualization.
+
+<Tip>
+  When you first open Ask, you'll see suggested questions based on your data. Click any suggestion to try it.
+</Tip>
+
+---
+
+## Example Questions
+
+### Usage & Activity
+
+- "Who uses ChatGPT the most?"
+- "Which AI tools are most popular?"
+- "How many activities happened this week?"
+- "Show me activity by device"
+
+### Discovery & Trends
+
+- "What new tools were discovered this week?"
+- "When was Claude first used?"
+- "Which tools are growing in usage?"
+
+### Coverage & Compliance
+
+- "What percentage of activity has full trace?"
+- "How much metadata-only activity do we have?"
+- "Show me coverage breakdown by tool"
+
+### People & Devices
+
+- "Who are the most active AI users?"
+- "Which devices have the most activity?"
+- "How many people use AI tools?"
+
+---
+
+## Response Types
+
+Ask returns different visualization types based on your question:
+
+### List Card
+
+Shows a ranked list of items with counts.
+
+**Best for:** "Who uses X the most?", "Which tools are most popular?"
+
+### Stat Card
+
+Displays a single metric prominently.
+
+**Best for:** "How many tools detected?", "Total activities this week?"
+
+### Bar Chart
+
+Horizontal bar visualization comparing values.
+
+**Best for:** "Activity by tool", "Usage by device"
+
+### Donut Card
+
+Percentage breakdown in a circular chart.
+
+**Best for:** "Coverage breakdown", "Activity by category"
+
+### New Tools Card
+
+Shows recently discovered AI tools.
+
+**Best for:** "New tools this week?", "Recent discoveries?"
+
+### Text Card
+
+Simple text response for complex or unsupported queries.
+
+**Best for:** Fallback when other visualizations don't apply.
+
+---
+
+## Working with Cards
+
+### Card Features
+
+Each response card includes:
+- **Timestamp** — When the question was asked
+- **Dismiss button** — Click X to remove the card
+- **Action buttons** — Some cards have buttons to drill down into data
+
+### Card Persistence
+
+Cards are saved locally and persist across sessions. Return to Ask to see your previous questions and answers.
+
+### Layout
+
+- With no cards: Input is centered with suggestions
+- With cards: Masonry grid layout with input at the bottom
+- Cards reflow responsively based on screen size
+
+---
+
+## Tips for Better Results
+
+<AccordionGroup>
+  <Accordion title="Be specific about time ranges">
+    Instead of "show activity", try "show activity this week" or "activity in the last 30 days".
+  </Accordion>
+
+  <Accordion title="Name tools explicitly">
+    Instead of "which chatbot is popular", try "how much is ChatGPT used?" or "Claude vs ChatGPT usage".
+  </Accordion>
+
+  <Accordion title="Ask one thing at a time">
+    Break complex questions into simpler ones. Instead of "who uses ChatGPT most and what do they use it for", ask them separately.
+  </Accordion>
+
+  <Accordion title="Use the suggestions">
+    The suggested questions are tailored to your data and show what Ask can answer well.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Limitations
+
+Ask works best with:
+- Questions about aggregated data (counts, rankings, percentages)
+- Time-based queries (this week, last month)
+- Comparisons between tools, users, or devices
+
+Ask may not handle:
+- Very specific queries about individual events
+- Complex conditional logic
+- Questions requiring data Oximy doesn't capture
+
+If Ask can't answer your question, it returns a text card explaining why or suggesting alternatives.
+
+---
+
+## Keyboard Shortcuts
+
+| Key | Action |
+|-----|--------|
+| `g a` | Go to Ask page |
+| `Enter` | Submit question |
+| `Esc` | Clear input |
+
+---
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Dashboard Overview" icon="grid-2" href="/dashboard/overview">
+    Learn about other dashboard features.
+  </Card>
+  <Card title="Troubleshooting" icon="wrench" href="/troubleshooting">
+    Get help if Ask isn't working as expected.
+  </Card>
+</CardGroup>

@@ -1,0 +1,196 @@
+---
+title: "Installation"
+description: "Install the Oximy sensor on macOS or Windows"
+---
+
+The Oximy sensor is a lightweight desktop application that monitors AI tool usage on enrolled devices. This guide covers installation for both macOS and Windows.
+
+<Info>
+  The sensor is **open source**. Review the code at [github.com/oximyhq/sensor](https://github.com/oximyhq/sensor) before deploying.
+</Info>
+
+## Download
+
+Download the sensor from your Oximy dashboard or use the direct links below:
+
+| Platform | Download |
+|----------|----------|
+| macOS (Apple Silicon) | [Download](https://oisp.dev/download/mac-arm) |
+| macOS (Intel) | [Download](https://oisp.dev/download/mac-intel) |
+| Windows | [Download](https://oisp.dev/download/windows) |
+
+<Tip>
+  **Which macOS version?** Go to **Apple menu → About This Mac**. If you see "Apple M1/M2/M3/M4", download Apple Silicon. If you see "Intel", download Intel.
+</Tip>
+
+## macOS Installation
+
+<Steps>
+  <Step title="Open the installer">
+    Double-click the downloaded `.dmg` file to mount it.
+  </Step>
+
+  <Step title="Install the app">
+    Drag the Oximy app icon to your **Applications** folder.
+  </Step>
+
+  <Step title="Launch Oximy">
+    Open Oximy from your Applications folder or Spotlight. On first launch, macOS may show a security dialog — click **Open** to continue.
+  </Step>
+
+  <Step title="Grant permissions">
+    Oximy requires two system permissions:
+
+    <AccordionGroup>
+      <Accordion title="Accessibility permission">
+        Required for detecting AI tool usage across applications.
+
+        1. Click **Open System Preferences** when prompted
+        2. Navigate to **Security & Privacy → Privacy → Accessibility**
+        3. Enable the checkbox next to **Oximy**
+        4. You may need to click the lock icon and enter your password
+      </Accordion>
+      <Accordion title="Network permission">
+        Required for monitoring AI API traffic.
+
+        The system will prompt you to allow network access. Click **Allow** to continue.
+      </Accordion>
+    </AccordionGroup>
+  </Step>
+
+  <Step title="Install the certificate">
+    Click **Install Certificate** when prompted. You'll need to enter your Mac password to authorize installation to the system keychain.
+
+    <Note>
+      The certificate enables Oximy to inspect encrypted HTTPS traffic to AI services. It's locally generated and unique to your device.
+    </Note>
+  </Step>
+
+  <Step title="Enable the proxy">
+    Click **Enable Proxy** to start monitoring. Oximy will configure your system network settings automatically.
+  </Step>
+
+  <Step title="Connect to your workspace">
+    Enter the **6-digit enrollment code** from your Oximy dashboard. The code expires after 5 minutes.
+  </Step>
+</Steps>
+
+### Where to find Oximy on macOS
+
+After installation, Oximy runs in your **menu bar** (top-right corner of your screen). Click the icon to open the app.
+
+| Status | Meaning |
+|--------|---------|
+| Green indicator | Connected and monitoring |
+| Yellow indicator | Connecting |
+| Red indicator | Connection issue |
+
+---
+
+## Windows Installation
+
+<Steps>
+  <Step title="Run the installer">
+    Double-click the downloaded `.exe` file. If Windows SmartScreen appears, click **More info → Run anyway**.
+  </Step>
+
+  <Step title="Complete the wizard">
+    Follow the installation wizard prompts. Administrator approval may be required.
+  </Step>
+
+  <Step title="Launch Oximy">
+    Oximy starts automatically after installation and appears in your **system tray** (bottom-right, near the clock).
+  </Step>
+
+  <Step title="Complete onboarding">
+    The app shows a welcome walkthrough explaining what Oximy does and how your privacy is protected.
+  </Step>
+
+  <Step title="Install the certificate">
+    Click **Install** in the Security Certificate section. A UAC prompt may appear — click **Yes** to allow installation.
+
+    <Note>
+      The certificate is installed to your Windows certificate store, enabling Oximy to inspect encrypted traffic to AI services.
+    </Note>
+  </Step>
+
+  <Step title="Enable the proxy">
+    Click **Enable** in the Network Proxy section. Oximy configures your system proxy settings automatically.
+  </Step>
+
+  <Step title="Connect to your workspace">
+    Enter the **6-digit enrollment code** from your Oximy dashboard. The code expires after 10 minutes.
+  </Step>
+</Steps>
+
+### Where to find Oximy on Windows
+
+After installation, Oximy runs in your **system tray** (bottom-right corner). Click the icon to open the app, or right-click for quick options.
+
+---
+
+## System Requirements
+
+<Tabs>
+  <Tab title="macOS">
+    - macOS 11.0 (Big Sur) or later
+    - Admin privileges for certificate installation
+    - Internet connection for enrollment and sync
+  </Tab>
+  <Tab title="Windows">
+    - Windows 10 or later
+    - Admin privileges for certificate installation
+    - Internet connection for enrollment and sync
+  </Tab>
+</Tabs>
+
+## Data Storage
+
+All captured data is stored locally on the device:
+
+<Tabs>
+  <Tab title="macOS">
+    ```
+    ~/.oximy/
+    ├── traces/          # Captured AI activity
+    ├── logs/            # Application logs
+    └── mitmproxy-ca.pem # Certificate files
+    ```
+  </Tab>
+  <Tab title="Windows">
+    ```
+    %USERPROFILE%\.oximy\
+    ├── traces\          # Captured AI activity
+    ├── logs\            # Application logs
+    └── mitmproxy-ca.pem # Certificate files
+    ```
+  </Tab>
+</Tabs>
+
+## Uninstalling
+
+<Tabs>
+  <Tab title="macOS">
+    1. Quit Oximy from the menu bar
+    2. Move Oximy from Applications to Trash
+    3. Delete the data folder: `rm -rf ~/.oximy/`
+    4. Open **Keychain Access**, search for "Oximy CA", and delete the certificate
+  </Tab>
+  <Tab title="Windows">
+    1. Quit Oximy from the system tray
+    2. Use **Add or Remove Programs** to uninstall
+    3. Delete the data folder: `%USERPROFILE%\.oximy\`
+    4. Open `certmgr.msc`, find "Oximy CA" in Trusted Root CAs, and delete
+  </Tab>
+</Tabs>
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Sensor Settings" icon="gear" href="/sensor/settings">
+    Configure auto-updates, manage certificates, and view local data.
+  </Card>
+  <Card title="Enrolling Devices" icon="users" href="/sensor/enrollment">
+    Learn how to deploy Oximy across your organization.
+  </Card>
+</CardGroup>

@@ -1,0 +1,197 @@
+---
+title: "Enrolling Devices"
+description: "Deploy Oximy sensors across your organization"
+---
+
+This guide covers how to enroll devices in your Oximy workspace, from adding a single device to deploying across teams.
+
+## How enrollment works
+
+Each device needs a unique **enrollment code** to connect to your workspace:
+
+1. Generate a code in the Oximy dashboard
+2. Enter the code in the sensor app on the target device
+3. The device registers and appears in your dashboard
+
+<Note>
+  Enrollment codes are **6 digits**, formatted with a space for readability (e.g., `158 221`). They expire after **10 minutes**.
+</Note>
+
+---
+
+## Adding a single device
+
+<Steps>
+  <Step title="Open the enrollment dialog">
+    In the Oximy dashboard, click **+ Add Device** in the sidebar, or go to the **Devices** page and click **Add Device**.
+  </Step>
+
+  <Step title="Select the operating system">
+    Choose **Mac** or **Windows**. For Mac, also select the chip type (Apple Silicon or Intel).
+  </Step>
+
+  <Step title="Download and install">
+    Download the sensor installer and follow the [installation guide](/sensor/installation).
+  </Step>
+
+  <Step title="Enter the enrollment code">
+    Copy the 6-digit code shown in the dashboard and enter it in the sensor app. The dashboard will show "Waiting for device to connect..." while it waits.
+  </Step>
+
+  <Step title="Name the device">
+    Once connected, you can give the device a friendly name (e.g., "Sarah's MacBook Pro") and optionally assign an owner email.
+  </Step>
+</Steps>
+
+---
+
+## Enrolling multiple devices
+
+For team deployments, you have several options:
+
+### Option 1: Individual enrollment
+
+Generate a unique code for each device. Best for:
+- Small teams (under 10 devices)
+- When you want specific device names assigned during enrollment
+
+### Option 2: Self-service enrollment
+
+Share sign-up access with your team:
+
+1. Invite team members to the Oximy dashboard
+2. Each member enrolls their own device
+3. Devices appear in the shared workspace automatically
+
+<Tip>
+  Self-service enrollment works well for distributed teams where IT can't physically access each device.
+</Tip>
+
+### Option 3: Pre-configured deployment
+
+For large-scale deployments:
+
+1. Contact Oximy support for enterprise deployment options
+2. Pre-configure devices with workspace credentials
+3. Automate installation via MDM or deployment scripts
+
+---
+
+## Device information
+
+After enrollment, each device shows:
+
+| Field | Description |
+|-------|-------------|
+| Device Name | User-assigned name |
+| Owner | Email of the device owner |
+| Operating System | macOS, Windows, or Linux |
+| Status | Online or Offline |
+| Last Seen | When the device last reported |
+| Sensor Version | Installed sensor version |
+
+### Updating device information
+
+Click on any device in the **Devices** page to:
+- View device details
+- See activity history
+- Update the device name
+- Change the assigned owner
+
+---
+
+## Monitoring enrollment
+
+### From the dashboard
+
+The **Devices** page shows all enrolled devices with their status:
+
+| Status | Meaning |
+|--------|---------|
+| Online (green) | Sensor is running and connected |
+| Offline (gray) | Sensor is not running or device is off |
+
+### During onboarding
+
+The enrollment wizard shows real-time status:
+
+1. **Waiting** — Code generated, waiting for device
+2. **Connecting** — Device found, completing registration
+3. **Success** — Device enrolled, ready to monitor
+
+---
+
+## Common deployment scenarios
+
+### IT Admin deploying to team
+
+<Steps>
+  <Step title="Prepare">
+    Create a list of devices and their owners.
+  </Step>
+  <Step title="Download installers">
+    Download the macOS and Windows installers to distribute.
+  </Step>
+  <Step title="Generate codes">
+    For each device, generate an enrollment code right before installation.
+  </Step>
+  <Step title="Install remotely">
+    Use remote desktop, MDM, or walk-through instructions for each user.
+  </Step>
+  <Step title="Verify">
+    Check the Devices page to confirm all devices appear online.
+  </Step>
+</Steps>
+
+### Remote team self-enrollment
+
+<Steps>
+  <Step title="Send instructions">
+    Share the installation guide and dashboard link with your team.
+  </Step>
+  <Step title="Team members install">
+    Each person downloads, installs, and generates their own enrollment code.
+  </Step>
+  <Step title="Monitor progress">
+    Watch the Devices page as team members complete enrollment.
+  </Step>
+</Steps>
+
+---
+
+## Troubleshooting enrollment
+
+<AccordionGroup>
+  <Accordion title="Code expired before I could enter it">
+    Codes expire after 10 minutes. In the dashboard, click **Generate new token** to get a fresh code.
+  </Accordion>
+
+  <Accordion title="Device stuck on 'Waiting for device to connect'">
+    Check that:
+    - The sensor app is running on the target device
+    - The enrollment code was entered correctly
+    - The device has internet connectivity
+    - No firewall is blocking Oximy
+  </Accordion>
+
+  <Accordion title="Device enrolled but shows offline">
+    The sensor may have been closed or the computer may be asleep. Open the Oximy app on the device to reconnect.
+  </Accordion>
+
+  <Accordion title="Wrong device name">
+    Click on the device in the Devices page to edit its name.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Dashboard Overview" icon="grid-2" href="/dashboard/overview">
+    Learn how to use the dashboard to monitor enrolled devices.
+  </Card>
+  <Card title="Troubleshooting" icon="wrench" href="/troubleshooting">
+    Detailed solutions for common issues.
+  </Card>
+</CardGroup>

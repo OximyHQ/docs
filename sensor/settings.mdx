@@ -1,0 +1,182 @@
+---
+title: "Sensor Settings"
+description: "Configure the Oximy sensor app"
+---
+
+The Oximy sensor has settings for managing updates, certificates, local data, and workspace connections.
+
+## Accessing Settings
+
+<Tabs>
+  <Tab title="macOS">
+    Click the Oximy icon in your **menu bar**, then select the **Settings** tab at the bottom of the window.
+  </Tab>
+  <Tab title="Windows">
+    Click the Oximy icon in your **system tray**, then click **Settings** to open the settings window.
+  </Tab>
+</Tabs>
+
+---
+
+## Updates
+
+Keep your sensor up to date with the latest detection capabilities and improvements.
+
+| Setting | Description |
+|---------|-------------|
+| Check for Updates | Manually check if a new version is available |
+| Automatic Updates | Enable to receive updates automatically (macOS) |
+
+<Tip>
+  Updates include new AI tool detection patterns. Keep auto-updates enabled to detect the latest AI tools.
+</Tip>
+
+---
+
+## Detection Bundle
+
+Oximy uses the **OISP (Open Intelligence Services Protocol)** to detect AI tools. The detection bundle defines which AI services are monitored.
+
+| Setting | Description |
+|---------|-------------|
+| Refresh Now | Manually refresh the detection bundle |
+| Last Updated | Shows when the bundle was last updated |
+
+The bundle refreshes automatically every 30 minutes while the sensor is running.
+
+---
+
+## Certificate
+
+The security certificate enables Oximy to inspect encrypted HTTPS traffic to AI services.
+
+<Tabs>
+  <Tab title="macOS">
+    | Action | Description |
+    |--------|-------------|
+    | Install/Uninstall | Toggle certificate installation in system keychain |
+    | Show in Finder | Open the folder containing certificate files |
+    | Open Keychain | Open Keychain Access to view the certificate |
+  </Tab>
+  <Tab title="Windows">
+    | Action | Description |
+    |--------|-------------|
+    | Install | Install certificate to Windows certificate store |
+    | Uninstall | Remove certificate from Windows certificate store |
+    | Generate | Create a new certificate (if needed) |
+  </Tab>
+</Tabs>
+
+<Warning>
+  Uninstalling the certificate will prevent AI tool detection. Keep it installed for normal operation.
+</Warning>
+
+### Certificate Details
+
+| Property | Value |
+|----------|-------|
+| Name | Oximy CA |
+| Key Size | RSA 4096-bit |
+| Validity | 10 years |
+| Scope | Local to this device only |
+
+---
+
+## Local Data
+
+View and manage data stored on your device.
+
+| Information | Description |
+|-------------|-------------|
+| Storage Used | Total size of trace files |
+| Events Pending | Events waiting to sync to the dashboard |
+| Last Sync | When data was last uploaded |
+
+### Actions
+
+| Action | Description |
+|--------|-------------|
+| Open Folder | View trace files in your file browser |
+| Clear Data | Delete all local trace files |
+| Sync Now | Manually trigger sync to dashboard (macOS) |
+
+<Warning>
+  **Clear Data** permanently deletes local trace files. Events already synced to the dashboard are not affected.
+</Warning>
+
+---
+
+## Account
+
+Manage your workspace connection.
+
+| Information | Description |
+|-------------|-------------|
+| Workspace | Name of the connected workspace |
+| Device Name | Name shown in the dashboard |
+
+| Action | Description |
+|--------|-------------|
+| Log Out | Disconnect from the workspace |
+
+<Note>
+  Logging out does **not** delete local data or uninstall the certificate. You can reconnect to the same or different workspace later.
+</Note>
+
+---
+
+## Advanced
+
+<Tabs>
+  <Tab title="macOS">
+    | Setting | Description |
+    |---------|-------------|
+    | Port | Current proxy port (default: 1030) |
+    | Config Directory | Path to Oximy data folder |
+    | Reset All Settings | Clear all preferences and start fresh |
+  </Tab>
+  <Tab title="Windows">
+    | Setting | Description |
+    |---------|-------------|
+    | Open Logs Folder | View application logs |
+    | Open Traces Folder | View captured trace files |
+    | Launch at Startup | Start Oximy when Windows boots |
+  </Tab>
+</Tabs>
+
+### Reset All Settings
+
+Resetting returns the app to its initial state:
+- Clears all preferences
+- Returns to setup wizard
+- Does **not** delete trace files
+- Does **not** remove the certificate
+
+---
+
+## Support
+
+Get help when you need it.
+
+| Resource | Description |
+|----------|-------------|
+| Help Center | Open documentation (this site) |
+| Send Feedback | Report issues or request features |
+| Contact Support | Email support@oximy.com |
+
+<Tabs>
+  <Tab title="macOS">
+    When contacting support, the pre-filled email includes:
+    - App version and build number
+    - macOS version
+    - Device model
+    - Oximy directory path
+  </Tab>
+  <Tab title="Windows">
+    When reporting issues, include:
+    - App version (shown in Settings)
+    - Windows version
+    - Steps to reproduce the issue
+    - Relevant log excerpts from the Logs folder
+  </Tab>
+</Tabs>
